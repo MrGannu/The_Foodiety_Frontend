@@ -19,8 +19,22 @@ import imageBaseURL from "../../imagebaseUrl";
 import Path from "../../components/path/Path";
 import Spinner from "../../components/loadingSpinner/Spinner";
 import DetailImage from "../../components/detailImage/DetailImage";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  LoadScript,
+} from "@react-google-maps/api";
+
+const mapContainerStyle = {
+  width: "100%",
+  height: "400px",
+};
+
+const center = {
+  lat: 0,
+  lng: 0,
+};
 
 const Resturent = () => {
   const { id } = useParams();
@@ -41,6 +55,7 @@ const Resturent = () => {
       document.body.classList.remove("no-scroll");
     };
   }, [detailImage]);
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -59,7 +74,8 @@ const Resturent = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
+
   if (loading) {
     return (
       <div className="Loading">
@@ -75,6 +91,7 @@ const Resturent = () => {
   if (!data || !image) {
     return null;
   }
+
   const filteredImage = image.filter((img) => img.product_id === data?.id);
 
   return (
@@ -170,21 +187,27 @@ const Resturent = () => {
               </div>
               <div className="restLocation">
                 <Heading state={"Location & Contact"} />
-                <MapContainer
-                  center={[data?.latitude, data?.longitude]}
-                  zoom={13}
-                  className="mapImage"
+                <LoadScript
+                  googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
+                  loadingElement={<Spinner />}
                 >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={[data?.latitude, data?.longitude]}>
-                    {/* <Popup>
-                      A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup> */}
-                  </Marker>
-                </MapContainer>
+                  <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    center={{
+                      lat: parseFloat(data?.latitude),
+                      lng: parseFloat(data?.longitude),
+                    }}
+                    zoom={13}
+                  >
+                    <Marker
+                      position={{
+                        lat: parseFloat(data?.latitude),
+                        lng: parseFloat(data?.longitude),
+                      }}
+                    />
+                  </GoogleMap>
+                </LoadScript>
+
                 <div className="restContact">
                   <img src={LOCATION} alt="" />
                   <span>{data?.location}</span>

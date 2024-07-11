@@ -1,0 +1,11 @@
+# Redirect all traffic to index.html (useful for single-page applications)
+/*    /index.html   200
+
+# Redirect from one URL to another
+/source-path  /destination-path  301
+
+# Redirect with query parameters
+/old-path  /new-path  301!
+
+# Custom 404 page
+/*    /404.html   404

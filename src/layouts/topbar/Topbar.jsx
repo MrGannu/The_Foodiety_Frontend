@@ -45,14 +45,14 @@ const Topbar = ({ state, setState }) => {
               About
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/services"
               className={({ isActive }) => (isActive ? "active" : "navlink")}
             >
               Services
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/contact"
