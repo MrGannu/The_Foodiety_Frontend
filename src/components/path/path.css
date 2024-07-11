@@ -1,0 +1,76 @@
+.pathContainer {
+  /* width: 1200px; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+  padding: 1rem 0;
+}
+.pathContainer .pathName {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.pathContainer .pathName:first-child {
+  color: #000;
+  border-left: 3px solid #ffde59;
+  padding-left: 10px;
+}
+.pathContainer ion-icon {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1 / 1;
+  color: #ffde59;
+}
+
+/* @media (max-width: 1368px) {
+  .pathContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2rem 2rem 1rem;
+  }
+  .pathContainer span {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .pathContainer span:first-child {
+    color: #000;
+    border-left: 3px solid #ffde59;
+    padding-left: 10px;
+  }
+  .pathContainer ion-icon {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1 / 1;
+    color: #ffde59;
+  }
+}
+@media (max-width: 768px) {
+  .pathContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2rem 1rem 1rem;
+  }
+  .pathContainer span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .pathContainer span:first-child {
+    color: #000;
+    border-left: 3px solid #ffde59;
+    padding-left: 10px;
+  }
+  .pathContainer ion-icon {
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1 / 1;
+    color: #ffde59;
+  }
+} */

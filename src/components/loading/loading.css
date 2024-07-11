@@ -1,0 +1,16 @@
+.carouserLoadingDiv {
+  width: 100%;
+  height: 85lvh;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  background: red;
+}
+.pathLoadingDiv span {
+  font-size: 17px;
+  font-weight: 600;
+  height: 30px;
+  width: 70px;
+  border-radius: 3px;
+  background-color: #dddddd73;
+  text-transform: capitalize;
+}

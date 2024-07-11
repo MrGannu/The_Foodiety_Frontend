@@ -1,0 +1,34 @@
+.headingContainer {
+  width: 100%;
+  height: max-content;
+}
+.headingContainer h3 {
+  font-size: 14px;
+  font-weight: 600;
+  border-left: 3px solid #ffde59;
+  padding-left: 15px;
+}
+/* @media (max-width: 1368px) {
+  .headingContainer {
+    padding: 0 2rem;
+    margin: 3rem 0 0.3rem;
+  }
+  .headingContainer h3 {
+    font-size: 20px;
+    font-weight: 600;
+    border-left: 3px solid #ffde59;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headingContainer {
+    padding: 0 1rem;
+  }
+  .headingContainer h3 {
+    font-size: 16px;
+    font-weight: 600;
+    border-left: 3px solid #ffde59;
+    padding-left: 10px;
+  }
+} */

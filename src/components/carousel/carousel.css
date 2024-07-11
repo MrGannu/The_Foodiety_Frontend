@@ -1,0 +1,122 @@
+.carouselContainer {
+  flex: 1;
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.carouselEmpty {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.carouselEmpty img {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 1px solid #ffde59;
+}
+.carouselSkeleton {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  border-radius: 3px;
+  transition: opacity 1s ease-in-out;
+}
+.carouselContainer .carouselSlide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  border-radius: 3px;
+  transition: opacity 1s ease-in-out;
+}
+.carouselSlide-hidden {
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+}
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 1.5rem;
+}
+.indicators .indicator {
+  background-color: #ffde59;
+  width: 8px;
+  height: 8px;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.indicators .indicator-inactive {
+  background-color: #fff;
+}
+.carouselContainer .carouselButtons {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6rem;
+  transition: 0.6s ease;
+}
+.carouselContainer:hover .carouselButtons {
+  padding: 0 4rem;
+}
+.carouselContainer .carouselButtons ion-icon {
+  width: 14px;
+  height: 14px;
+  padding: 10px 3px;
+  border-radius: 3px;
+  color: #f4f4f4;
+  background: rgba(128, 128, 128, 0.267);
+  border: 1px solid #ffffff7a;
+  opacity: 0;
+  transition: 0.6s ease;
+}
+
+.carouselContainer .carouselButtons ion-icon:hover {
+  background: rgba(128, 128, 128, 0.274);
+  color: #ffde59;
+  border-color: #ffde59;
+}
+
+.carouselContainer:hover .carouselButtons ion-icon {
+  opacity: 1;
+}
+
+.carouselContainer .carouselSlide.next {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.carouselContainer .carouselSlide.active {
+  transform: translateX(0%);
+}
+
+.carouselContainer .carouselSlide.prev {
+  transform: translateX(-200%);
+  opacity: 0;
+}
