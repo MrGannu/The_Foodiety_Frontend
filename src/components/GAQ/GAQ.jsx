@@ -3,7 +3,7 @@ import DOWN from "/icons/down.png";
 import "./gaq.css";
 
 const GAQ = () => {
-  const [openId, setOpenId] = useState(1);
+  const [openId, setOpenId] = useState(0);
   const data = [
     {
       id: 1,

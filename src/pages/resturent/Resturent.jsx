@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./resturent.css";
-import MAP from "/assets/map.png";
 import SMOKING from "/icons/smoking.png";
 import WIFI from "/icons/wifi.png";
 import BAR from "/icons/bar.png";
@@ -9,7 +8,7 @@ import RATE from "/icons/rate.png";
 import SHOOT from "/icons/shoot.png";
 import PHONE from "/icons/call.png";
 import MAIL from "/icons/mails.png";
-import LOCATION from "/icons/loc.png";
+import LOCATION_ICON from "/icons/location.png"; // Import the location.png icon
 import CLOCK from "/icons/clock.png";
 import Heading from "../../components/heading/Heading";
 import { useParams } from "react-router-dom";
@@ -19,12 +18,9 @@ import imageBaseURL from "../../imagebaseUrl";
 import Path from "../../components/path/Path";
 import Spinner from "../../components/loadingSpinner/Spinner";
 import DetailImage from "../../components/detailImage/DetailImage";
-import {
-  GoogleMap,
-  Marker,
-  InfoWindow,
-  LoadScript,
-} from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet"; // Import Leaflet library
 
 const mapContainerStyle = {
   width: "100%",
@@ -93,6 +89,14 @@ const Resturent = () => {
   }
 
   const filteredImage = image.filter((img) => img.product_id === data?.id);
+
+  // Custom icon for the marker
+  const locationIcon = L.icon({
+    iconUrl: LOCATION_ICON,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40],
+  });
 
   return (
     <>
@@ -187,29 +191,26 @@ const Resturent = () => {
               </div>
               <div className="restLocation">
                 <Heading state={"Location & Contact"} />
-                <LoadScript
-                  googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
-                  loadingElement={<Spinner />}
+                <MapContainer
+                  center={[data?.latitude, data?.longitude]}
+                  zoom={13}
+                  className="mapImage"
                 >
-                  <GoogleMap
-                    mapContainerStyle={mapContainerStyle}
-                    center={{
-                      lat: parseFloat(data?.latitude),
-                      lng: parseFloat(data?.longitude),
-                    }}
-                    zoom={13}
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  <Marker
+                    position={[data?.latitude, data?.longitude]}
+                    icon={locationIcon} // Set custom icon
                   >
-                    <Marker
-                      position={{
-                        lat: parseFloat(data?.latitude),
-                        lng: parseFloat(data?.longitude),
-                      }}
-                    />
-                  </GoogleMap>
-                </LoadScript>
-
+                    <Popup>
+                      A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                  </Marker>
+                </MapContainer>
                 <div className="restContact">
-                  <img src={LOCATION} alt="" />
+                  <img src={LOCATION_ICON} alt="" />
                   <span>{data?.location}</span>
                 </div>
                 <div className="restContact">
