@@ -4,6 +4,7 @@ import "./carousel.css";
 import baseURL from "../../baseUrl";
 import imageBaseURL from "../../imagebaseUrl";
 import LOGO from "../../../public/logo/logo.png";
+import Empty from "../empty/Empty";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,23 +59,22 @@ const Carousel = () => {
   return (
     <div className="carouselContainer">
       {filteredData.length > 0 ? (
-        filteredData.map((dat, index) => (
-          <img
-            key={index}
-            src={`${imageBaseURL}${dat.carousel_Image}`}
-            loading="lazy"
-            className={
-              currentIndex === index
-                ? "carouselSlide"
-                : "carouselSlide carouselSlide-hidden"
-            }
-            alt={`slide-${index}`}
-          />
-        ))
+        <>
+          {filteredData.map((dat, index) => (
+            <img
+              key={index}
+              src={`${imageBaseURL}${dat.carousel_Image}`}
+              className={
+                currentIndex === index
+                  ? "carouselSlide"
+                  : "carouselSlide carouselSlide-hidden"
+              }
+              alt={`slide-${index}`}
+            />
+          ))}
+        </>
       ) : (
-        <div className="carouselEmpty">
-          <img src={LOGO} alt="" />
-        </div>
+        <Empty />
       )}
       <div className="indicators">
         {filteredData.map((_, index) => (

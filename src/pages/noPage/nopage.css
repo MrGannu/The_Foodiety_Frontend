@@ -1,0 +1,25 @@
+.nopageContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+}
+.nopageContainer img {
+  width: 250px;
+  height: 150px;
+  object-fit: contain;
+}
+.backtohomepage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.backtohomepage img {
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1 / 1;
+}

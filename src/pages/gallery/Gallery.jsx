@@ -6,7 +6,7 @@ import Button from "../../components/button/Button";
 import baseURL from "../../baseUrl";
 import axios from "axios";
 import Spinner from "../../components/loadingSpinner/Spinner";
-import EMPTY from "/icons/emptyBLog.png";
+import Empty from "../../components/empty/Empty";
 
 const Gallery = () => {
   const [data, setData] = useState(null);
@@ -47,23 +47,20 @@ const Gallery = () => {
     return null;
   }
 
-  const filteredImages =
-    data?.filter((image) => image.image_type !== "portrait").slice(0, 6) || [];
-
   return (
     <>
       <div className="galleryContainer">
         {/* Blog Page Path Name */}
         <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
-        <div className="gallery">
-          {data && data.length > 0 ? (
-            data.map((image) => (
+        {data && data.length > 0 ? (
+          <div className="gallery">
+            {data.map((image) => (
               <ImageCard key={image.id} state={image} type={image.image_type} />
-            ))
-          ) : (
-            <p>No images available.</p>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <Empty />
+        )}
         {location.pathname === "/" && (
           <div className="blogPageButton">
             <Button state="gallery" />

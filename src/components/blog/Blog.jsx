@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./blog.css";
 import { NavLink } from "react-router-dom";
+import imageBaseURL from "../../imagebaseUrl";
 
 const Blog = ({ state, image = [] }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,18 +35,7 @@ const Blog = ({ state, image = [] }) => {
     <div className="blogContainer">
       <NavLink to={`/blogs/detail/${state.id}`} className="navlink blogNavlink">
         <div className="blogImage">
-          {blogImage ? (
-            <img
-              src={`${baseURL}${blogImage?.image}`}
-              alt="Blog"
-              className="skeleton"
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-              style={{ display: isLoading ? "none" : "block" }}
-            />
-          ) : (
-            <p>No image available</p>
-          )}
+          <img src={`${imageBaseURL}${blogImage?.image}`} alt="Blog" />
         </div>
         <div className="blogText">
           <span>{formatDate(state.publish_date)}</span>

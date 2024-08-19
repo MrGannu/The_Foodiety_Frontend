@@ -90,7 +90,7 @@ const Topbar = ({ state, setState }) => {
               to="/resturent"
               className={({ isActive }) => (isActive ? "active" : "navlink")}
             >
-              Resturents
+              Restaurants
             </NavLink>
           </li>
         </ul>

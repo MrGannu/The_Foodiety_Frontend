@@ -6,19 +6,6 @@ import Spinner from "../loadingSpinner/Spinner";
 
 const Contact = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  });
-  if (loading) {
-    return (
-      <div className="Loading">
-        <Spinner />
-      </div>
-    );
-  }
   return (
     <div
       className={

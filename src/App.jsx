@@ -11,6 +11,7 @@ import Videos from "./pages/videos/Videos";
 import VideoModel from "./components/videoModel/VideoModel";
 import Resturent from "./pages/resturent/Resturent";
 import Cards from "./components/cards/Cards";
+import NoPage from "./pages/noPage/NoPage";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="resturent" element={<Cards />} />
             <Route path="resturent/detail/:id" element={<Resturent />} />
           </Route>
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </>

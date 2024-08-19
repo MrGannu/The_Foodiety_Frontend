@@ -3,10 +3,10 @@ import Button from "../../components/button/Button";
 import Path from "../../components/path/Path";
 import VideoCard from "../../components/videoCard/VideoCard";
 import "./videos.css";
-import EMPTY from "/icons/emptyBLog2.png";
 import Spinner from "../../components/loadingSpinner/Spinner";
 import axios from "axios";
 import baseURL from "../../baseUrl";
+import Empty from "../../components/empty/Empty";
 
 const Videos = () => {
   const [data, setData] = useState([]);
@@ -55,18 +55,16 @@ const Videos = () => {
       }
     >
       {/* Blog Page Path Name */}
-      <div className="pagePath">
-        {window.location.pathname !== "/" && <Path />}
-      </div>
-      <div className="videos">
-        {filteredData && filteredData.length > 0 ? (
-          filteredData.map((video) => (
+      <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
+      {filteredData && filteredData.length > 0 ? (
+        <div className="videos">
+          {filteredData.map((video) => (
             <VideoCard key={video.id} state={video} type={video.type} />
-          ))
-        ) : (
-          <p>No videos available.</p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <Empty />
+      )}
       {window.location.pathname === "/" && (
         <div className="blogPageButton">
           <Button state="video" />

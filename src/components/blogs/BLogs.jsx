@@ -6,13 +6,11 @@ import Button from "../button/Button";
 import baseURL from "../../baseUrl";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import Spinner from "../loadingSpinner/Spinner";
-import EMPTY from "/icons/emptyBLog4.png";
+import Empty from "../empty/Empty";
 
 const Blogs = () => {
   const [data, setData] = useState(null);
   const [image, setImage] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
 
@@ -47,39 +45,24 @@ const Blogs = () => {
   }
 
   return (
-    <>
-      <div
-        className={
-          location.pathname === "/" ? "blogsContainerHome" : "blogsContainer"
-        }
-      >
-        {/* Blog Page Path Name */}
-        <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
-        {/* Blog Page Datas */}
-        <div className="blogs">
-          {loading ? (
-            <div className="Loading">
-              <Spinner />
-            </div>
-          ) : null}
-          <div className="blogCards">
-            {filteredData && filteredData.length > 0 ? (
-              filteredData.map((dat, i) => {
-                return <Blog key={i} state={dat} image={image} />;
-              })
-            ) : (
-              <p>No blogs available.</p>
-            )}
-          </div>
+    <div className="blogsContainer">
+      <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
+      {filteredData && filteredData.length > 0 ? (
+        <div className="blogCards">
+          {filteredData.map((dat, i) => {
+            return <Blog key={i} state={dat} image={image} />;
+          })}
         </div>
-        {/* Blog Page Path Route Button */}
-        {location.pathname === "/" && (
-          <div className="blogPageButton">
-            <Button state="blogs" />
-          </div>
-        )}
-      </div>
-    </>
+      ) : (
+        <Empty />
+      )}
+      {/* Blog Page Path Route Button */}
+      {location.pathname === "/" && (
+        <div className="blogPageButton">
+          <Button state="blogs" />
+        </div>
+      )}
+    </div>
   );
 };
 

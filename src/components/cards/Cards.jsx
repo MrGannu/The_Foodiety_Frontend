@@ -6,7 +6,7 @@ import Button from "../button/Button";
 import Path from "../path/Path";
 import Spinner from "../loadingSpinner/Spinner";
 import "./cards.css";
-import EMPTY from "/icons/emptyBLog3.png";
+import Empty from "../empty/Empty";
 
 const Cards = () => {
   const [data, setData] = useState(null);
@@ -56,26 +56,23 @@ const Cards = () => {
   }));
 
   return (
-    <>
-      <div className="resturentsContainer">
-        {/* Blog Page Path Name */}
-        <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
+    <div className="resturentsContainer">
+      <div className="pagePath">{location.pathname !== "/" && <Path />}</div>
+      {data.length > 0 ? (
         <div className="resturents">
-          {data.length > 0 ? (
-            productsWithImages.map((product) => (
-              <Card key={product.id} state={product} />
-            ))
-          ) : (
-            <p>No resturents available.</p>
-          )}
+          {productsWithImages.map((product) => (
+            <Card key={product.id} state={product} />
+          ))}
         </div>
-        {location.pathname === "/" && (
-          <div className="blogPageButton">
-            <Button state="resturent" />
-          </div>
-        )}
-      </div>
-    </>
+      ) : (
+        <Empty />
+      )}
+      {location.pathname === "/" && (
+        <div className="blogPageButton">
+          <Button state="resturent" />
+        </div>
+      )}
+    </div>
   );
 };
 
