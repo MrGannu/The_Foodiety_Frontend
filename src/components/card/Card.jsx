@@ -56,7 +56,7 @@ const Card = ({ state }) => {
           />
         </div>
         <div className="readMore">
-          <NavLink to={`/resturent/detail/${state.id}`}>
+          <NavLink to={`/restaurant/detail/${state.id}`}>
             <button className="readmoreBtn">
               <span>Read more</span>
               <ion-icon name="arrow-forward-circle-outline"></ion-icon>

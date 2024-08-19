@@ -12,6 +12,7 @@ const Blogs = () => {
   const [data, setData] = useState(null);
   const [image, setImage] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
   const location = useLocation();
 
   useEffect(() => {

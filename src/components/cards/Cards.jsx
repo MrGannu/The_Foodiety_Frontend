@@ -69,7 +69,7 @@ const Cards = () => {
       )}
       {location.pathname === "/" && (
         <div className="blogPageButton">
-          <Button state="resturent" />
+          <Button state="restaurant" />
         </div>
       )}
     </div>

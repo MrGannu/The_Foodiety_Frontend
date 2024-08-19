@@ -28,8 +28,8 @@ const App = () => {
             <Route path="gallery" element={<Gallery />} />
             <Route path="video" element={<Videos />} />
             <Route path="video/detail/:id" element={<VideoModel />} />
-            <Route path="resturent" element={<Cards />} />
-            <Route path="resturent/detail/:id" element={<Resturent />} />
+            <Route path="restaurant" element={<Cards />} />
+            <Route path="restaurant/detail/:id" element={<Resturent />} />
           </Route>
           <Route path="*" element={<NoPage />} />
         </Routes>

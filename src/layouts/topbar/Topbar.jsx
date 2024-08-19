@@ -87,7 +87,7 @@ const Topbar = ({ state, setState }) => {
           </li>
           <li>
             <NavLink
-              to="/resturent"
+              to="/restaurant"
               className={({ isActive }) => (isActive ? "active" : "navlink")}
             >
               Restaurants

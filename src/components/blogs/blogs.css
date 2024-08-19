@@ -1,5 +1,6 @@
 .blogsContainer {
   width: 1200px;
+  height: 100vh;
   margin: auto;
   flex: 1;
   display: flex;
