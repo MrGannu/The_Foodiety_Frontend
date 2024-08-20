@@ -48,13 +48,12 @@ const Card = ({ state }) => {
             <span>{state?.location}</span>
           </div>
         </div>
-        <div className="cardContent">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: state?.about_us.substring(0, 500),
-            }}
-          />
-        </div>
+        <div
+          className="cardContent"
+          dangerouslySetInnerHTML={{
+            __html: state?.about_us,
+          }}
+        />
         <div className="readMore">
           <NavLink to={`/restaurant/detail/${state.id}`}>
             <button className="readmoreBtn">

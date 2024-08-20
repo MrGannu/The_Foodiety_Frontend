@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Noto Sans", sans-serif;
 }
 .mainContainerDiv {
   margin: auto;
@@ -14,13 +13,7 @@
   width: 1200px;
   margin: auto;
 }
-a {
-  text-decoration: none;
-  color: #000;
-}
-li {
-  list-style: none;
-}
+
 html::-webkit-scrollbar {
   width: 7px;
 }
@@ -53,24 +46,55 @@ html::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
 }
-.Empty {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
+a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
 }
-.Empty img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  opacity: 0.8;
+
+li {
+  font-size: 1rem;
+  font-weight: 800;
+  list-style: none;
 }
-.Empty p {
-  font-size: 12px;
+
+span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2rem;
   font-weight: 500;
 }

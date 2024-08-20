@@ -19,7 +19,6 @@
 }
 
 .buttonContainer button span {
-  font-size: 12px;
   font-weight: 700;
 }
 
@@ -50,27 +49,3 @@
   position: relative;
   z-index: 1;
 }
-/* @media (max-width: 1368px) {
-  .buttonContainer {
-    padding: 0.2rem 0;
-  }
-  .buttonContainer button span {
-    font-size: 14px;
-  }
-  .buttonContainer button ion-icon {
-    width: 16px;
-    height: 16px;
-  }
-}
-@media (max-width: 768px) {
-  .buttonContainer {
-    padding: 0;
-  }
-  .buttonContainer button span {
-    font-size: 14px;
-  }
-  .buttonContainer button ion-icon {
-    width: 16px;
-    height: 16px;
-  }
-} */

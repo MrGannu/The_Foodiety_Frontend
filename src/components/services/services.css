@@ -59,51 +59,8 @@
 }
 
 .servicesContainer .servicesItmes .servicesItem span {
-  font-size: 13px;
-  font-weight: 700;
   color: #fff;
 }
 .serviceImg:hover {
   scale: 1.1;
 }
-/* @media (max-width: 1368px) {
-  .servicesContainer {
-    height: max-content;
-    margin: 1rem 2rem;
-    padding: 2rem 0;
-  }
-  .servicesContainer .servicesItmes {
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
-  .servicesContainer .servicesItmes .servicesItem {
-    width: 140px;
-    height: 140px;
-  }
-  .servicesContainer .servicesItmes .servicesItem .serviceImg {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .servicesContainer {
-    margin: 1rem;
-    padding: 0.5rem 0 0 0;
-  }
-  .servicesContainer .servicesItmes {
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .servicesContainer .servicesItmes .servicesItem {
-    width: 100px;
-    height: 100px;
-    scale: 0.7;
-  }
-  .servicesContainer .servicesItmes .servicesItem .serviceImg {
-    width: 60px;
-    height: 60px;
-  }
-} */
