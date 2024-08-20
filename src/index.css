@@ -5,14 +5,6 @@
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
 }
-.mainContainerDiv {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  width: 1200px;
-  margin: auto;
-}
 
 html::-webkit-scrollbar {
   width: 7px;
@@ -45,6 +37,20 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.mainContainerDiv {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 1200px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .mainContainerDiv {
+    width: 100%;
+    padding: 1rem;
+  }
 }
 a {
   font-size: 1rem;

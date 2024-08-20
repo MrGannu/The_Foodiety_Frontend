@@ -14,3 +14,11 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
 }
+@media (max-width: 768px) {
+  .galleryContainer {
+    width: 100%;
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

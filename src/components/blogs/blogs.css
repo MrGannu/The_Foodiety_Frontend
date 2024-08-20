@@ -10,14 +10,18 @@
 .blogCards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   flex: 1;
   height: fit-content;
   gap: 5px;
 }
-.blogCardEmpty img {
-  width: 60px;
-  height: 60px;
-  opacity: 0.8;
+
+@media (max-width: 768px) {
+  .blogsContainer {
+    width: 100%;
+  }
+  .blogCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

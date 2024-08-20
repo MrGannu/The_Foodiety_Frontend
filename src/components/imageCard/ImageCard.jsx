@@ -25,14 +25,12 @@ const ImageCard = ({ state, type }) => {
     setIsModalOpen(false);
   };
   return (
-    <div className={`imageContainer `}>
-      <div className="singleImageWrapper">
-        <img
-          src={`${imageBaseURL}${state.image}`}
-          alt={state.type}
-          onClick={handleImageClick}
-        />
-      </div>
+    <div className="imageContainer">
+      <img
+        src={`${imageBaseURL}${state.image}`}
+        alt={state.type}
+        onClick={handleImageClick}
+      />
       <span>{state.image_name}</span>
       <Modal
         isOpen={isModalOpen}

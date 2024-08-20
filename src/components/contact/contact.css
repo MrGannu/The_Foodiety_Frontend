@@ -119,3 +119,11 @@
 .contactContainer .contactForm button:hover ion-icon {
   scale: 1.3;
 }
+@media (max-width: 768px) {
+  .contactCard {
+    width: 100%;
+  }
+  .contactContainer {
+    flex-direction: column;
+  }
+}

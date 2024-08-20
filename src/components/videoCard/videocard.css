@@ -13,7 +13,7 @@
 .videoContainer video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: 1s ease;
 }
 .reels_png {
@@ -44,4 +44,10 @@
 .videoContainer:hover .play_btn {
   opacity: 1;
   transform: scale(1);
+}
+@media (max-width: 768px) {
+  .videoContainer {
+    min-height: 190px;
+    max-height: 190px;
+  }
 }

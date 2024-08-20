@@ -82,3 +82,12 @@ hr {
   color: #ffffff;
   padding: 1rem 0;
 }
+@media (max-width: 768px) {
+  .footerCard {
+    width: 100%;
+  }
+  .footerContent {
+    flex-direction: column;
+    height: max-content;
+  }
+}

@@ -5,7 +5,6 @@
   background: #ffde59;
 }
 .contactBarCard {
-  background: #ffde59;
   width: 1200px;
   flex: 1;
   height: 65px;
@@ -40,6 +39,25 @@
   margin-right: 10px;
   object-fit: contain;
 }
-.menu {
+.mobileMenu {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .contactBarContainer {
+    background: transparent;
+  }
+  .contactBarCard {
+    width: 100%;
+    padding: 0 1rem;
+    background: transparent;
+  }
+  .contactBarCard .contactBarLeft,
+  .contactBarCard .contactBarRight,
+  .logo {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
 }

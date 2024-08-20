@@ -93,3 +93,12 @@
   filter: grayscale(10);
   transition: 1s ease;
 }
+@media (max-width: 768px) {
+  .detailContainerCard {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .detailCard {
+    flex-direction: column;
+  }
+}

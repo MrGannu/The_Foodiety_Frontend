@@ -3,7 +3,6 @@ import axios from "axios";
 import "./carousel.css";
 import baseURL from "../../baseUrl";
 import imageBaseURL from "../../imagebaseUrl";
-import LOGO from "../../../public/logo/logo.png";
 import Empty from "../empty/Empty";
 
 const Carousel = () => {

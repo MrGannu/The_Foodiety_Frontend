@@ -39,10 +39,10 @@ const Card = ({ state }) => {
       <div className="cardText">
         <h3>{state?.name}</h3>
         <div className="cardTextContent">
-          <div className="cardTextContentIcon">
+          {/* <div className="cardTextContentIcon">
             <img src="./services/star.png" alt="rating" />
             <span>{state?.rating}</span>
-          </div>
+          </div> */}
           <div className="cardTextContentIcon">
             <img src="./services/location.png" alt="location" />
             <span>{state?.location}</span>

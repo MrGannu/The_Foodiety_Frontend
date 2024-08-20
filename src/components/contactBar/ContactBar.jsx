@@ -5,11 +5,11 @@ import YOUTUBE from "/icons/youtube.png";
 import FACEBOOK from "/icons/facebook.png";
 import INSTAGRAM from "/icons/instagram.png";
 import CALL from "/icons/call.png";
-import MENU from "/icons/menu.png";
 import axios from "axios";
 import baseURL from "../../baseUrl";
 import Spinner from "../loadingSpinner/Spinner";
 import { NavLink } from "react-router-dom";
+import MENU from "../../../public/mobilemenu/menu.png";
 
 const ContactBar = ({ setState }) => {
   const [data, setData] = useState(null);
@@ -56,6 +56,14 @@ const ContactBar = ({ setState }) => {
   return (
     <div className="contactBarContainer">
       <div className="contactBarCard">
+        <img
+          src={MENU}
+          alt=""
+          className="mobileMenu"
+          onClick={() => {
+            setState(true);
+          }}
+        />
         <div className="contactBarLeft">
           <p>Follow Us:</p>
           <div className="socialLinks">
@@ -80,15 +88,6 @@ const ContactBar = ({ setState }) => {
             >
               <img src={INSTAGRAM} alt="" />
             </NavLink>
-
-            <img
-              src={MENU}
-              className="menu"
-              alt=""
-              onClick={() => {
-                setState(true);
-              }}
-            />
           </div>
         </div>
         <a href="/">

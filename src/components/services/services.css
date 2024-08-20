@@ -64,3 +64,9 @@
 .serviceImg:hover {
   scale: 1.1;
 }
+@media (max-width: 768px) {
+  .servicesContainer .servicesItmes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,7 +1,7 @@
 .blogContainer {
   flex: 1;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 400px;
+  max-height: 400px;
   border: 1px solid #7777771e;
   overflow: hidden;
   cursor: pointer;
@@ -63,10 +63,11 @@
   font-weight: 700;
   text-transform: capitalize;
 }
-.blogNavlink {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+@media (max-width: 768px) {
+  .blogsContainer {
+    width: 100%;
+  }
+  .blogCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

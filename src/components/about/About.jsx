@@ -108,6 +108,7 @@ const About = () => {
               className="aboutText"
               style={{
                 marginLeft: location.pathname === "/" ? "2rem" : 0,
+                marginLeft: window.innerWidth < 800 ? "0" : "2rem",
                 marginTop: location.pathname === "/" ? null : "1rem",
               }}
             >
