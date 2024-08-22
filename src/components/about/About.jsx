@@ -8,7 +8,8 @@ import imageBaseURL from "../../imagebaseUrl";
 import Heading from "../heading/Heading";
 import GAQ from "../GAQ/GAQ";
 import Spinner from "../loadingSpinner/Spinner";
-import Empty from "../empty/Empty";
+import ServiceCard from "../services/servicecard/ServiceCard";
+import Services from "../services/Services";
 
 const About = () => {
   const [data, setData] = useState(null);
@@ -107,21 +108,28 @@ const About = () => {
             <div
               className="aboutText"
               style={{
-                marginLeft: location.pathname === "/" ? "2rem" : 0,
-                marginLeft: window.innerWidth < 800 ? "0" : "2rem",
+                marginLeft:
+                  window.innerWidth < 800 || location.pathname !== "/"
+                    ? "0"
+                    : "2rem",
                 marginTop: location.pathname === "/" ? null : "1rem",
               }}
             >
               <h3>
-                {location.pathname === "/"
-                  ? "Our Story"
-                  : "Welcome To [ 'The Foodiety' ]"}
+                {location.pathname === "/" ? (
+                  "Our Story"
+                ) : (
+                  <>
+                    <span>Welcome To</span>
+                    <p className="foodietyTitle">The Foodiety</p>
+                  </>
+                )}
               </h3>
               {location.pathname === "/" ? (
                 <div
                   className="aboutTextParagraph"
                   dangerouslySetInnerHTML={{
-                    __html: data[0]?.about_text,
+                    __html: data[0]?.about_text.substring(0, 600),
                   }}
                 />
               ) : (
@@ -148,6 +156,10 @@ const About = () => {
             {location.pathname === "/" ? null : (
               <Heading state={"Our Services"} />
             )}
+            <section>
+              <Services />
+              <ServiceCard />
+            </section>
 
             {location.pathname === "/" ? null : (
               <>

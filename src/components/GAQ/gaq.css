@@ -4,8 +4,8 @@
 .accordion {
   flex: 1;
   border: 1px solid #dddddd81;
-  padding: 0.7rem 1rem;
-  border-radius: 5px;
+  border-radius: 0.6rem;
+  padding: 0.3rem 0.5rem;
   overflow-y: scroll;
   transition: 1s ease;
   margin-bottom: 0.8rem;
@@ -39,8 +39,8 @@
 .activeAccordion {
   flex: 1;
   margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.6rem;
   overflow-y: scroll;
   transition: 1s ease;
   border: 1px solid #ffde5977;

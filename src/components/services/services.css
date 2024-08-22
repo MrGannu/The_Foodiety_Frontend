@@ -10,7 +10,7 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  border-radius: 3px;
+  border-radius: 0.6rem;
 }
 
 .servicesContainer .servicesItmes {

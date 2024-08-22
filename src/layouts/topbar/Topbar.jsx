@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import LOGO from "../../../public/logo/foodiety.png";
-import HOME from "../../../public/mobilemenu/home.png";
-import ABOUT from "../../../public/mobilemenu/about.png";
-import CONTACT from "../../../public/mobilemenu/contact.png";
-import IMAGE from "../../../public/mobilemenu/image.png";
-import VIDEO from "../../../public/mobilemenu/video.png";
-import BLOG from "../../../public/mobilemenu/blog.png";
-import DISH from "../../../public/mobilemenu/dish.png";
-import CLOSE from "../../../public/icons/cancel.png";
+import LOGO from "/logo/foodiety.png";
+import HOME from "/mobilemenu/home.png";
+import ABOUT from "/mobilemenu/about.png";
+import CONTACT from "/mobilemenu/contact.png";
+import IMAGE from "/mobilemenu/image.png";
+import VIDEO from "/mobilemenu/video.png";
+import BLOG from "/mobilemenu/blog.png";
+import DISH from "/mobilemenu/dish.png";
+import CLOSE from "/icons/cancel.png";
 import "./topbar.css";
 
 const Topbar = ({ state, setState }) => {

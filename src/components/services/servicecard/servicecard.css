@@ -1,0 +1,61 @@
+.serviceCardMain {
+  width: 100%;
+  height: max-content;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2rem 0;
+}
+.serviceCard {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  gap: 15px;
+}
+.serviceCard:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.serviceCardImage {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+.serviceCardImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  transition: 0.3s ease-out;
+}
+.serviceCardImage:hover img {
+  transform: scale(1.3);
+}
+.serviceCardText {
+  flex: 1.5;
+  text-align: justify;
+}
+.serviceCardText h3 {
+  margin-bottom: 10px;
+  padding-left: 1rem;
+  border-left: 4px solid #ffde59;
+}
+@media (max-width: 768px) {
+  .serviceCard {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .serviceCardImage,
+  .serviceCardText {
+    flex: 1 !important;
+  }
+  .serviceCardImage {
+    max-height: 250px;
+  }
+  .serviceCard:nth-child(even) {
+    flex-direction: column;
+  }
+}
