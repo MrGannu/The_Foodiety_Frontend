@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: fit-content;
-  padding: 2rem 0;
+  padding: 2rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://images.pexels.com/photos/2942320/pexels-photo-2942320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
@@ -65,6 +65,9 @@
   scale: 1.1;
 }
 @media (max-width: 768px) {
+  .servicesContainer {
+    margin: 0 1rem;
+  }
   .servicesContainer .servicesItmes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

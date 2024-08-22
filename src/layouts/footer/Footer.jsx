@@ -61,11 +61,11 @@ const Footer = () => {
             <div className="footerLogo">
               <img src={FOOTERLOGO} alt="" />
             </div>
-            <p>
-              All the Lorem Ipsum generators on the Internet tend to repeat
-              predefined chunks as necessary, making this the first true
-              generator on the Internet.
-            </p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data[0]?.about_text.substring(0, 150),
+              }}
+            ></div>
           </div>
           <div className="footerItem">
             <h3>Contact info</h3>

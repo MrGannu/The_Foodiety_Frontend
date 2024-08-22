@@ -20,6 +20,7 @@
 @media (max-width: 768px) {
   .blogsContainer {
     width: 100%;
+    padding: 0 1rem;
   }
   .blogCards {
     grid-template-columns: repeat(1, 1fr);

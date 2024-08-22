@@ -156,10 +156,12 @@ const About = () => {
             {location.pathname === "/" ? null : (
               <Heading state={"Our Services"} />
             )}
-            <section>
-              <Services />
-              <ServiceCard />
-            </section>
+            {location.pathname === "/" ? null : (
+              <section>
+                <Services />
+                <ServiceCard />
+              </section>
+            )}
 
             {location.pathname === "/" ? null : (
               <>

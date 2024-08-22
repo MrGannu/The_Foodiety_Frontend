@@ -1,11 +1,57 @@
 import React, { useEffect, useState } from "react";
 import "./contact.css";
 import Path from "../path/Path";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Spinner from "../loadingSpinner/Spinner";
+import axios from "axios";
+import baseURL from "../../baseUrl";
+import YOUTUBE from "/icons/youtube.png";
+import FACEBOOK from "/icons/facebook.png";
+import INSTAGRAM from "/icons/instagram.png";
 
 const Contact = () => {
   const location = useLocation();
+  const [data, setData] = useState(null);
+  const [imageData, setImageData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const aboutResponse = await axios.get(`${baseURL}/about`);
+        setData(aboutResponse.data);
+
+        const imageResponse = await axios.get(`${baseURL}/aboutImage`);
+        setImageData(imageResponse.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="Loading">
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!data || !imageData) {
+    return null;
+  }
   return (
     <div
       className={
@@ -46,9 +92,27 @@ const Contact = () => {
             </div>
             <div className="contactSocialLinks">
               <p>Follow us:</p>
-              <img src="./icons/facebook.png" alt="" />
-              <img src="./icons/instagram.png" alt="" />
-              <img src="./icons/youtube.png" alt="" />
+              <NavLink
+                to={data[0]?.facebook_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={FACEBOOK} alt="" />
+              </NavLink>
+              <NavLink
+                to={data[0]?.instagram_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={INSTAGRAM} alt="" />
+              </NavLink>
+              <NavLink
+                to={data[0]?.youtube_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={YOUTUBE} alt="" />
+              </NavLink>
             </div>
           </div>
           <div className="contactForm">

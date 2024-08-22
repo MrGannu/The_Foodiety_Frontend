@@ -6,3 +6,9 @@
   border-left: 3px solid #ffde59;
   padding-left: 15px;
 }
+@media (max-width: 768px) {
+  .headingContainer {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
