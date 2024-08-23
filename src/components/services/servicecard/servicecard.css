@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   padding: 2rem 0;
 }
 .serviceCard {

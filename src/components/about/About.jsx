@@ -163,7 +163,7 @@ const About = () => {
               </section>
             )}
 
-            {location.pathname === "/" ? null : (
+            {/* {location.pathname === "/" ? null : (
               <>
                 {location.pathname === "/" ? null : (
                   <Heading state={"Got Any Questions?"} />
@@ -172,7 +172,7 @@ const About = () => {
                   <GAQ />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </div>
       ) : null}
