@@ -5,7 +5,7 @@
   border: 1px solid #7777771e;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.6rem;
   position: relative;
 }
 .blogContainer:hover {

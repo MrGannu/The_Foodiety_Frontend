@@ -10,6 +10,7 @@ import Empty from "../empty/Empty";
 
 const Blogs = () => {
   const [data, setData] = useState(null);
+  console.dir(data);
   const [image, setImage] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -39,11 +40,17 @@ const Blogs = () => {
     return <div>Error: {error}</div>;
   }
 
-  // Filter the data based on the pathname
-  let filteredData = data;
-  if (location.pathname === "/" && data) {
-    filteredData = data.slice(0, 6);
+  if (!data) {
+    return null;
   }
+  const filteredData = data
+    .filter((blog) => blog.id !== data.id)
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  // Filter the data based on the pathname
+  // let filteredData = data;
+  // if (location.pathname === "/" && data) {
+  //   filteredData = data.slice(0, 6);
+  // }
 
   return (
     <div className="blogsContainer">

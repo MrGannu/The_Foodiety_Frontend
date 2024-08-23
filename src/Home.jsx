@@ -22,7 +22,7 @@ const Home = () => {
       <Gallery />
       <Heading state={"Popular Videos :"} />
       <Videos />
-      <Heading state={"Contact us :"} />
+      <Heading state={"Contact Us :"} />
       <Contact />
       <Heading state={"Our Blogs :"} />
       <BLogs />

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./contactbar.css";
 import LOGO from "/logo/logo.png";
-import YOUTUBE from "/icons/youtube.png";
+import YOUTUBE from "/icons/ut.png";
 import FACEBOOK from "/icons/facebook.png";
 import INSTAGRAM from "/icons/instagram.png";
+import TIKTOK from "/icons/tiktok.png";
+import THREADS from "/icons/threads.png";
 import CALL from "/icons/call.png";
 import axios from "axios";
 import baseURL from "../../baseUrl";
@@ -68,13 +70,6 @@ const ContactBar = ({ setState }) => {
           <p>Follow Us:</p>
           <div className="socialLinks">
             <NavLink
-              to={data[0]?.youtube_link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={YOUTUBE} alt="" />
-            </NavLink>
-            <NavLink
               to={data[0]?.facebook_link}
               target="_blank"
               rel="noopener noreferrer"
@@ -87,6 +82,27 @@ const ContactBar = ({ setState }) => {
               rel="noopener noreferrer"
             >
               <img src={INSTAGRAM} alt="" />
+            </NavLink>
+            <NavLink
+              to={data[0]?.tiktok_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={TIKTOK} alt="" />
+            </NavLink>
+            <NavLink
+              to={data[0]?.threads_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={THREADS} alt="" />
+            </NavLink>
+            <NavLink
+              to={data[0]?.youtube_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={YOUTUBE} alt="" />
             </NavLink>
           </div>
         </div>

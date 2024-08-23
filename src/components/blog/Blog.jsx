@@ -19,12 +19,16 @@ const Blog = ({ state, image = [] }) => {
   return (
     <div className="blogContainer">
       <div className="blogImage">
-        <img src={`${imageBaseURL}${blogImage?.image}`} alt="Blog" />
+        {blogImage ? (
+          <img src={`${imageBaseURL}${blogImage.image}`} alt="Blog" />
+        ) : (
+          <p>No image available</p>
+        )}
       </div>
       <div className="blogText">
         <span>{formatDate(state.publish_date)}</span>
         <NavLink to={`/blogs/detail/${state.id}`}>
-          <h3>{state.blog_title} ...</h3>
+          <h5>{state.blog_title} ...</h5>
           <div
             className="cardContent"
             dangerouslySetInnerHTML={{

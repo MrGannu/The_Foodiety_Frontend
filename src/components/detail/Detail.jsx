@@ -6,17 +6,19 @@ import THREADS from "/icons/threads.png";
 import FACEBOOK from "/icons/fb.png";
 import INSTAGRAM from "/icons/insta.png";
 import axios from "axios";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, NavLink } from "react-router-dom";
 import imageBaseURL from "../../imagebaseUrl";
 import Spinner from "../loadingSpinner/Spinner";
 import baseURL from "../../baseUrl";
 import DetailImage from "../detailImage/DetailImage";
+import Blog from "../blog/Blog";
 
 const Detail = () => {
   const { id } = useParams();
   const location = useLocation();
   const [detailImage, setDetailImage] = useState(false);
   const [data, setData] = useState(null);
+  const [blogData, setBlogData] = useState(null);
   const [image, setImage] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -28,6 +30,8 @@ const Detail = () => {
       try {
         const resData = await axios.get(`${baseURL}/blog/${id}`);
         setData(resData.data);
+        const blog = await axios.get(`${baseURL}/blogs`);
+        setBlogData(blog.data);
         const resImage = await axios.get(`${baseURL}/blogImage`);
         setImage(resImage.data);
       } catch (err) {
@@ -51,6 +55,13 @@ const Detail = () => {
       </div>
     );
   }
+
+  if (!blogData) {
+    return null;
+  }
+  const filteredBlogData = blogData
+    .filter((blog) => blog.id !== data.id)
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -115,7 +126,10 @@ const Detail = () => {
               </div>
             </div>
             <div className="detailRight">
-              <p>No recent blogs available.</p>
+              <Heading state={"Recent Blogs"} />
+              {filteredBlogData.map((blog) => {
+                return <Blog state={blog} image={image} />;
+              })}
             </div>
           </div>
         </div>

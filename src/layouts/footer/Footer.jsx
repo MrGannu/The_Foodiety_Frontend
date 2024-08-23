@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./footer.css";
 import FOOTERLOGO from "/logo/foodiety.png";
-import FACEBOOKLOGO from "/icons/facebook.png";
-import INSTAGRAMLOGO from "/icons/instagram.png";
-import YOUTUBELOGO from "/icons/ut.png";
+import YOUTUBE from "/icons/ut.png";
+import FACEBOOK from "/icons/facebook.png";
+import INSTAGRAM from "/icons/instagram.png";
+import TIKTOK from "/icons/tiktok.png";
+import THREADS from "/icons/threads.png";
 import PHONE from "/icons/footPhone.png";
 import EMAIL from "/icons/footMail.png";
 import baseURL from "../../baseUrl";
@@ -13,7 +15,6 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const [data, setData] = useState(null);
-  const [imageData, setImageData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -25,9 +26,6 @@ const Footer = () => {
       try {
         const aboutResponse = await axios.get(`${baseURL}/about`);
         setData(aboutResponse.data);
-
-        const imageResponse = await axios.get(`${baseURL}/aboutImage`);
-        setImageData(imageResponse.data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -50,7 +48,7 @@ const Footer = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!data || !imageData) {
+  if (!data) {
     return null;
   }
   return (
@@ -84,21 +82,35 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={FACEBOOKLOGO} alt="" />
+                  <img src={FACEBOOK} alt="" />
                 </NavLink>
                 <NavLink
                   to={data[0]?.instagram_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={INSTAGRAMLOGO} alt="" />
+                  <img src={INSTAGRAM} alt="" />
+                </NavLink>
+                <NavLink
+                  to={data[0]?.tiktok_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={TIKTOK} alt="" />
+                </NavLink>
+                <NavLink
+                  to={data[0]?.threads_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={THREADS} alt="" />
                 </NavLink>
                 <NavLink
                   to={data[0]?.youtube_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={YOUTUBELOGO} alt="" />
+                  <img src={YOUTUBE} alt="" />
                 </NavLink>
               </div>
             </div>
