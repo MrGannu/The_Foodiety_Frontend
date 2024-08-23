@@ -2,6 +2,7 @@
   box-sizing: border-box;
   overflow: hidden;
   height: 270px;
+  max-width: 153px;
   position: relative;
   display: flex;
   align-items: center;
@@ -9,11 +10,12 @@
   cursor: pointer;
   border-radius: 3px;
   overflow: hidden;
+  border: 1px solid #ffde49;
 }
 .videoContainer video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: 1s ease;
 }
 .reels_png {
@@ -44,6 +46,53 @@
 .videoContainer:hover .play_btn {
   opacity: 1;
   transform: scale(1);
+}
+.videoContainer:hover .controls {
+  opacity: 1;
+  transform: scale(1);
+}
+.controls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.6s ease-in;
+}
+.controls button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+.controls img {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+#PlayPause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#PlayPause img {
+  width: 37px;
+  height: 37px;
+}
+#MuteUnmute {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+#Fullscreen {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
 }
 @media (max-width: 768px) {
   .videoContainer {
