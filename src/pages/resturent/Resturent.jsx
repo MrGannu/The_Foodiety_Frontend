@@ -126,6 +126,7 @@ const Resturent = () => {
           <h4>{data?.location}</h4>
           <div className="restContents">
             <div className="restContentLeft">
+              <Heading state={"About"} />
               <div className="restText">
                 <p
                   className="cardContent"
@@ -134,8 +135,8 @@ const Resturent = () => {
                   }}
                 />
               </div>
-              <Heading state={"Most Popular Facilities"} />
-              <div className="restServices">
+              {/* <Heading state={"Most Popular Facilities"} /> */}
+              {/* <div className="restServices">
                 <div className="restServis">
                   <img src={SMOKING} alt="" />
                   <span>Non-smoking rooms</span>
@@ -152,7 +153,7 @@ const Resturent = () => {
                   <img src={PARKING} alt="" />
                   <span>Free Parking</span>
                 </div>
-              </div>
+              </div> */}
               <Heading state={"Features"} />
               <div className="restFeatures">
                 <p
@@ -164,7 +165,7 @@ const Resturent = () => {
               </div>
             </div>
             <div className="restContentRight">
-              <div className="restRatings">
+              {/* <div className="restRatings">
                 <Heading state={"Ratings"} />
                 <div className="rate">
                   <img src={RATE} alt="" />
@@ -188,7 +189,7 @@ const Resturent = () => {
                     <img src={SHOOT} alt="" />
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="restLocation">
                 <Heading state={"Location & Contact"} />
                 <MapContainer

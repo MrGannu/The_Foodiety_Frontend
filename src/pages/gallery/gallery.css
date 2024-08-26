@@ -10,16 +10,19 @@
 }
 .gallery {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 @media (max-width: 768px) {
   .galleryContainer {
     width: 100%;
+    height: max-content !important;
     padding: 0 1rem;
   }
   .gallery {
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
   }
 }

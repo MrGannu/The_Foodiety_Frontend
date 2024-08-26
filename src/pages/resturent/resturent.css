@@ -22,6 +22,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.6rem;
 }
 .restContents {
   width: 100%;
@@ -122,4 +123,13 @@
   opacity: 0.6;
   aspect-ratio: 1 / 1;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .resturentMainContainer {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .restContents {
+    flex-direction: column;
+  }
 }

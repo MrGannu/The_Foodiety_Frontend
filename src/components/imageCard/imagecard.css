@@ -2,39 +2,61 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  min-height: 150px;
-  max-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.6rem;
   background: #000;
+  margin: 0;
 }
+
+.imageContainer.landscape {
+  width: 300px; /* 1/4th of 1200px */
+  height: 200px; /* Adjusted height for landscape */
+}
+
+.imageContainer.portrait {
+  width: 150px; /* 1/8th of 1200px */
+  height: 200px; /* Adjusted height for portrait */
+}
+
 .imageContainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 1s ease;
 }
+
 .imageContainer span {
   position: absolute;
   top: 10px;
   left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 12px;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 800;
+  color: #ffffff;
   transform: scale(0);
   transition: 0.6s ease 0s;
   z-index: 101;
   border-left: 2px solid #ffde59;
+  background: #ffde5983;
   padding-left: 5px;
 }
+
 .imageContainer:hover span {
   transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .imageContainer.landscape {
+    width: 100%;
+    height: 200px;
+  }
+
+  .imageContainer.portrait {
+    flex: 1 1 25%;
+    height: 220px;
+  }
 }
 
 .modalOverlay {
@@ -53,27 +75,23 @@
 .modalContent {
   position: relative;
   background: #fff;
-  padding: 5px;
-  width: 90%;
-  height: 90%;
+  width: 1000px;
+  height: 800px;
 }
 
 .modalImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .closeButton {
   position: absolute;
   top: 10px;
-  right: 10px;
-  font-size: 24px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 34px;
+  color: #ffde59;
   cursor: pointer;
-}
-@media (max-width: 768px) {
-  .imageContainer {
-    min-height: 190px;
-    max-height: 190px;
-  }
 }

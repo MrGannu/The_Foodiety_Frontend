@@ -173,4 +173,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .cardContainer:nth-child(even) {
+    flex-direction: column;
+  }
 }
